@@ -1,15 +1,13 @@
-<suite name="Cross-Browser Testing Suite" parallel="tests" thread-count="3">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-    <listeners>
-        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
-    </listeners>
-
+<suite name="Cross-Browser Testing Suite" parallel="tests" thread-count="6">
     <test name="UI Tests - Chrome">
         <parameter name="browser" value="chrome"/>
         <parameter name="headless" value="false"/>
         <classes>
             <class name="com.booking.CurrencyTest"/>
-            <class name="com.booking.FilterTest"/>git
+            <class name="com.booking.FilterTest"/>
         </classes>
     </test>
 
