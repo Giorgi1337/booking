@@ -1,0 +1,33 @@
+<suite name="Cross-Browser Testing Suite" parallel="tests" thread-count="3">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="UI Tests - Chrome">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="headless" value="false"/>
+        <classes>
+            <class name="com.booking.CurrencyTest"/>
+            <class name="com.booking.FilterTest"/>git
+        </classes>
+    </test>
+
+    <test name="UI Tests - Edge">
+        <parameter name="browser" value="edge"/>
+        <parameter name="headless" value="false"/>
+        <classes>
+            <class name="com.booking.CurrencyTest"/>
+            <class name="com.booking.FilterTest"/>
+        </classes>
+    </test>
+
+    <test name="UI Tests - Firefox">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="headless" value="false"/>
+        <classes>
+            <class name="com.booking.CurrencyTest"/>
+            <class name="com.booking.FilterTest"/>
+        </classes>
+    </test>
+</suite>
