@@ -1,5 +1,7 @@
 package com.booking;
 
+import com.booking.retry.RetryAnalyzer;
+import com.booking.retry.RetryCount;
 import com.booking.steps.FilterPageSteps;
 import com.booking.steps.LandingPageSteps;
 import com.booking.steps.SearchResultsPageSteps;
@@ -26,7 +28,8 @@ public class FilterTest extends BaseTest {
     @Story("User applies filters to refine search results by rating")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Verifies the ability to select and validate filters for refining search results based on rating")
-    @Test(testName = "filterTest")
+    @Test(testName = "filterTest", retryAnalyzer = RetryAnalyzer.class)
+    @RetryCount(count = 2)
     public void filterTest() {
         landingSteps
                 .validateHomePage()

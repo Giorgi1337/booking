@@ -22,12 +22,6 @@ public class SearchResultsPageSteps {
         return this;
     }
 
-    @Step("Validate search result header for location: {location}")
-    public SearchResultsPageSteps validateSearchResultHeader(String location) {
-        searchResultsPage.searchResultH1.shouldBe(visible).shouldHave(text(location));
-        return this;
-    }
-
     @Step("Select check-in and check-out dates (Check-in: Today, Check-out: {daysToAddForCheckOut} days later)")
     public SearchResultsPageSteps selectDates() {
         return selectDates(10); // Default check-out is 10 days from today

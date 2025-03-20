@@ -1,5 +1,7 @@
 package com.booking;
 
+import com.booking.retry.RetryAnalyzer;
+import com.booking.retry.RetryCount;
 import com.booking.steps.CurrencyPageSteps;
 import com.booking.steps.LandingPageSteps;
 import com.booking.steps.SearchResultsPageSteps;
@@ -27,7 +29,8 @@ public class CurrencyTest extends BaseTest {
     @Story("User selects a currency and validates it")
     @Severity(SeverityLevel.NORMAL)
     @Description("Verifies the ability to select and validate the Argentine Peso (AR$)")
-    @Test(testName = "currencyTest")
+    @Test(testName = "currencyTest", retryAnalyzer = RetryAnalyzer.class)
+    @RetryCount(count = 2)
     public void currencyTest() {
         landingSteps
                 .validateHomePage()

@@ -20,7 +20,7 @@ import org.testng.annotations.Parameters;
 
 public class BaseTest {
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     @Parameters({"browser", "headless"})
     public void setUp(@Optional("chrome") String browser, @Optional("false") String headless) {
         WebDriverManager webDriverManager;
@@ -101,8 +101,8 @@ public class BaseTest {
         return options;
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void tearDown() {
-        Selenide.closeWebDriver();
+        Selenide.closeWindow();
     }
 }

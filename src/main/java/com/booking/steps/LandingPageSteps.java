@@ -29,8 +29,9 @@ public class LandingPageSteps {
 
     @Step("Enter location: {place}")
     public LandingPageSteps selectLocation(String place) {
+        landingPage.searchInput.click();
         landingPage.searchInput.setValue(place);
-        landingPage.dropdown.shouldBe(appear);
+        landingPage.dropdown.shouldBe(visible);
         landingPage.dropdown.$$("[role='option']").findBy(text(place)).click();
         return this;
     }

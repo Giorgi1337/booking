@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class SearchResultsPage {
     public SelenideElement
             searchButton = $x("//button[span[text()='Search']]"),
-            searchResultH1 = $("h1[aria-live='assertive']"),
             datePickerOpenButton = $("[data-testid='searchbox-datepicker-calendar']"),
             adultDecreaseButton = $x("//div[label[text()='Adults']]/following-sibling::div/button[1]"),
             removeChild = $x("//div[label[text()='Children']]/following-sibling::div/button[1]"),
